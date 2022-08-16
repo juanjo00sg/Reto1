@@ -4,7 +4,7 @@ function main() {
   do {
     ans = findCourses(classes);
   } while (checkHours(ans));
-  console.log(ans)
+  showClass(ans)
 }
 /* Funtion that returns the Class object */
 function createClass(name, hours) {
@@ -58,4 +58,16 @@ function findCourses(array) {
   classes.splice(index2, 1);
 
   return [obj1, obj2];
+}
+
+/* Show Classes */
+function showClass(arr) {
+    array = structuredClone(arr);
+    let msj= [];
+    for (const i of array) {
+        msj.push(String(i.name))
+        
+    }
+    
+    document.getElementById("output").innerHTML = msj.toString();
 }
